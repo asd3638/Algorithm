@@ -81,9 +81,16 @@ public class Q2660 {
         bw.write(result + " " + count + "\n");
 
         String sb_str = sb.toString();
-        sb_str = sb_str.substring(0, sb_str.length() - 1);
 
         bw.write(sb_str + "\n");
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(arr[i][j] + "\t"); // 열 출력
+            }
+            System.out.println(); // 행 출력
+        }
+
         bw.flush();
         bw.close();
     }
