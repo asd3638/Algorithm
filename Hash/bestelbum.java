@@ -1,5 +1,5 @@
 package Hash;
-
+//연결됐니
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
