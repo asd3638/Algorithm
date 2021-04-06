@@ -9,14 +9,20 @@ public class speedCamera {
     public static int solution(int[][] routes) {
         int answer = 1;
         List<Integer> cri = new ArrayList<>();
+        //처음에 이렇게 작성했는데 람다 쓰니까 거의 한줄...
+        //람다식 변경 공부 많이 해야할 듯!
 
-        Arrays.sort(routes, new Comparator<int[]>(){
+        // Arrays.sort(routes, new Comparator<int[]>(){
 
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
-            }
+        //     @Override
+        //     public int compare(int[] o1, int[] o2) {
+        //         return o1[0] - o2[0];
+        //     }
             
+        // });
+
+        Arrays.sort(routes, (a, b) -> {
+            return a[0] - b[1];
         });
 
         cri.add(routes[0][1]);
