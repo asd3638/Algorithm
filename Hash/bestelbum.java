@@ -55,11 +55,11 @@ public class bestelbum {
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
         int[] plays = {500, 600, 150, 800, 2500};
 
-        List<Integer> listist = new ArrayList<>();
+        int[] listist;
         listist = solution(genres, plays);
 
-        for (int i = 0; i < listist.size(); i++) {
-            bw.write("\n" + listist.get(i));
+        for (int i = 0; i < listist.length; i++) {
+            bw.write("\n" + listist[i]);
         }
         bw.flush();
         bw.close();
