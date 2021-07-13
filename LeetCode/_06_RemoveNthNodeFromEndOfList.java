@@ -1,8 +1,5 @@
 package LeetCode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class _06_RemoveNthNodeFromEndOfList {
     public static class ListNode {
         int val;
@@ -12,27 +9,29 @@ public class _06_RemoveNthNodeFromEndOfList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        List<Integer> nodeList = new ArrayList<>();
-        ListNode answer = null;
-        ListNode temp = answer;
-
-        while (head != null) {
-            nodeList.add(head.val);
-            head = head.next;
+        int listNodeCount = 0;
+        int countForAnswer = 0;
+        ListNode tempNode1 = head;
+        ListNode result = new ListNode(0, head);
+        ListNode tempNode2 = result;
+        //ListNode 길이 구하기
+        while (tempNode1.next != null) {
+            listNodeCount++;
+            tempNode1 = tempNode1.next;
         }
-        nodeList.remove(nodeList.size() - n);
+        if (listNodeCount == 0) {
+            return null;
+        }
 
-        for (Integer i : nodeList) {
-            ListNode node = new ListNode(i);
-            if (answer == null) {
-                answer = node;
-                temp = answer;
-            } else {
-                temp.next = node;
-                temp = node;
+        while (tempNode2.next != null) {
+            if (listNodeCount - n + 1 == countForAnswer) {
+                tempNode2.next = tempNode2.next.next;
+                break;
             }
+            tempNode2 = tempNode2.next;
+            countForAnswer++;
         }
-        return answer;
+        return result.next;
     }
     public static void main(String[] args) {
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
