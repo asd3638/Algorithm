@@ -27,7 +27,7 @@ public class _13_GroupAnagrams {
         return answer;
     }
     public static void main(String[] args) {
-        String[] stringList = {"Hello", "I", "am", "kim"};
+        String[] stringList = {"Hello", "I", "am", "ma", "kim"};
         System.out.println(solution(stringList).get(0));
     }
 }
