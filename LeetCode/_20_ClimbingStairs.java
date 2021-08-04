@@ -24,6 +24,6 @@ public class _20_ClimbingStairs {
     }
 
     public static void main(String[] args) {
-        System.out.println(climbStairs2(7));
+        System.out.println(climbStairs2(4));
     }
 }
