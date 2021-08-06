@@ -1,6 +1,6 @@
 package LeetCode;
 
-public class _21_DecodeWays {
+public class _24_DecodeWays {
     public static int numDecodings(String s) {
         int[] dp = new int[s.length()];
         dp[0] = s.charAt(0) == '0' ? 0 : 1;
