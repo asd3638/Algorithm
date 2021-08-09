@@ -21,6 +21,6 @@ public class _24_DecodeWays {
         return dp[s.length() - 1];
     }
     public static void main(String[] args) {
-        System.out.println(numDecodings("1123"));
+        System.out.println(numDecodings("11003"));
     }
 }
